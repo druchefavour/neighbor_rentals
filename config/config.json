@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Ozpa67mp1$",
+    "password": " ",
     "database": "neighbor_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
