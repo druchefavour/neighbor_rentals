@@ -1,8 +1,13 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": " ",
     "database": "neighbor_db",
+=======
+    "password": null,
+    "database": "blogger",
+>>>>>>> 4a4960d44717d96b4c2932f9479ff142ce0ab647
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
