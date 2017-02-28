@@ -39,7 +39,7 @@
                   <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="/home"><img alt="Brand" id="logo" src="img/NR_logo.png"></a>
-
+              
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,7 +67,36 @@
 
   <!-- Page Content -->
   <div class="container">
-  
+    <div class="row">
+      <div class="col-md-6">
+        <p class="lead">Sign-in</p>
+          <form data-toggle="validator" role="form">
+
+            <div class="form-group">
+              <label for="inputEmail" class="control-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="control-label">Password</label>
+              <div class="form-inline row">
+                <div class="form-group col-sm-6">
+                  <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- Reference: https://1000hz.github.io/bootstrap-validator/ -->
+      </div>
+    </div>
+
+    <hr>
+
     <div class="row">
       <div class="col-md-6">
         <p class="lead">Create account</p>
