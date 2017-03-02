@@ -40,8 +40,13 @@ module.exports = function(app) {
   }); */
 
 app.post('/products/create', function(req, res){
+  console.log(req.body.product_Name);
+  console.log(req.body.price);
+  console.log(req.body.Condition);
   db.Product.create({
-    product_name: req.body.product_name
+    product_name:req.body.product_Name,
+    pricing:req.body.price,
+    short_description:req.body.Condition
   }).then(function(){
     res.redirect('/api')
   });
