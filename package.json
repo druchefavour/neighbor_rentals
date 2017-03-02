@@ -1,0 +1,34 @@
+{
+  "name": "neighborhood-rentals",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanysaur/neighbor_rentals.git"
+  },
+  "keywords": [
+    "neighbor",
+    "rentals",
+    "goods"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanysaur/neighbor_rentals/issues"
+  },
+  "homepage": "https://github.com/tanysaur/neighbor_rentals#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
+    "nodemon": "^1.11.0",
+    "sequelize": "^3.30.2"
+  }
+}
