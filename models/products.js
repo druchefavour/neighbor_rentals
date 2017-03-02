@@ -23,31 +23,35 @@ module.exports = function(sequelize, DataTypes) {
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      //allowNull: false
     },
     pricing: {
       type: DataTypes.FLOAT(9, 2),
-      allowNull: false,
+      //allowNull: false,
       defaultValue: 0.0
     },
     short_description: {
       type: DataTypes.STRING,
-      allowNull: false
+      //allowNull: false
     },
     long_description: {
       type: DataTypes.TEXT,
-      allowNull: true
+      //allowNull: false
+    },
+     exchanged: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
     icon: {
       type: DataTypes.STRING,
-      allowNull: false
+      //allowNull: false
     },
     createdAt: {
-        allowNull: false,
+        //allowNull: false,
         type: DataTypes.DATE
       },
     updatedAt: {
-        allowNull: false,
+       // allowNull: false,
         type: DataTypes.DATE
       }
     },
@@ -62,6 +66,6 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     }
-    )
+  );
   return Product;
   };

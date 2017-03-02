@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/products", function(req, res) {
+  app.get("/api/products/all", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
@@ -26,13 +26,33 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/products", function(req, res) {
-    db.Product.create(req.body).then(function(dbProduct) {
+  // Get route for returning posts of a specific category
+ /* app.get("/products/create", function(req, res) {
+    db.Product.create({
+      where: {
+        product_name: req.body.product_name
+      }
+    })
+    .then(function(dbProduct) {
       res.json(dbProduct);
+      //res.redirect('/burgers');
     });
-  });
+  }); */
 
-  app.delete("/api/products/:id", function(req, res) {
+app.post('/products/create', function(req, res){
+  console.log(req.body.product_Name);
+  console.log(req.body.price);
+  console.log(req.body.Condition);
+  db.Product.create({
+    product_name:req.body.product_Name,
+    pricing:req.body.price,
+    short_description:req.body.Condition
+  }).then(function(){
+    res.redirect('/api')
+  });
+});
+
+app.delete("/products/products:id", function(req, res) {
     db.Product.destroy({
       where: {
         id: req.params.id
@@ -43,15 +63,17 @@ module.exports = function(app) {
   });
 
 // PUT route for updating products
-  app.put("/api/products", function(req, res) {
-    db.Product.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbProduct) {
-        res.json(dbProduct);
-      });
+  app.put('/products/update/:id', function(req, res) {
+  var condition = 'id : ' + req.params.id;
+
+  console.log('condition ', condition);
+
+  db.Product.update({'exchanged': req.body.exchanged}, {where: {id: req.params.id}}).then(function(dbProduct){
+    res.redirect('/api');
   });
+<<<<<<< HEAD:routes/products_api_routes.js
 };
+=======
+});
+};
+>>>>>>> master:routes/products_api_routes.js

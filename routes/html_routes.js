@@ -1,50 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+// *********************************************************************************
+// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// *********************************************************************************
 
-<head>
-	<meta charset="UTF-8">
-	<title>CMS - Express</title>
-	<!-- Latest compiled and minified CSS & JS -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
+// Dependencies
+// =============================================================
+var path = require("path");
+var express = require('express');
+// require our burger model
+var db = require('../models');
 
-<body>
-	<div class="container hidden">
-		<div class="row top-30">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/blog">Go to Blog</a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/authors">Manage Authors</a>
-      </div>
-    </div>
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<form id="cms">
-					<div class="form-group">
-						<label for="title">Title:</label>
-						<input placeholder="Post Title" type="text" class="form-control" id="title">
-						<br />
-						<label for="body">Body:</label>
-						<textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
-						<div class="form-group">
-							<label for="category">Select Author:</label>
-							<select class="form-control" id="author">
-  						</select>
-						</div>
-						<br />
-						<button type="submit" class="btn btn-success submit">Submit</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	<!-- Custom Script -->
-	<script src="js/cms.js" type="text/javascript"></script>
+// Routes
+// =============================================================
+module.exports = function(app) {
 
-</body>
+  app.get("/api", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
 
-</html>
+    console.log(hbsObject);
+
+    res.render('index', hbsObject);
+    });
+  });
+
+  // Each of the below routes just handles the HTML page that the user gets sent to.
+
+  // index route loads view.html
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/home.html"));
+  });
+
+  // cms route loads cms.html
+  app.get("/cms", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/borrower.html"));
+  });
+
+  // blog route loads blog.html
+  app.get("/blog", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/lend.html"));
+  });
+
+  // authors route loads product_test.html
+  app.get("/products", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/product_test.html"));
+  });
+};
+

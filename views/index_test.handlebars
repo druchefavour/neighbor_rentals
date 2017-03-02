@@ -1,0 +1,93 @@
+<!-- ========================================== --->
+<div class="container"> 
+  <div class="jumbotron"> 
+    <img class="img-rounded" style="width:160px" src="img/lawn-mower.jpg"> 
+    <!-- ===================== -->
+    <h1> Neighbour Rental App!</h1>
+    <p> Manage the rentals here </p>
+  </div>
+
+  {{!-- Product list before exchange --}}
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <div class="panel-panel default">
+        <ul class="list-group">
+        {{#each Product}}
+          {{#unless this.exchanged}}
+          <li class="list-group-item">
+            <div class="input-group">
+              <p class="lead"> {{this.product_name}} </p>
+              <i class="lead">{{this.pricing}} </i>
+              <i class="lead">{{this.short_description}} </i>
+              <span class="input-group-btn">
+                <form action="products/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="exchanged" value="true">
+                  <button class="btn btn-default btn-lg" type="submit"> Borrow! </button>
+                </form>
+              </span>
+            </div>
+          </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+
+    {{!-- products list after exchange --}}
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <div class="panel panel-default">
+        <ul class="list-group">
+        {{#each Product}}
+          {{#if this.exchanged}}
+          <li class="list-group-item">
+            <p class="lead">{{this.product_name}} </p>
+            <i class="lead">{{this.pricing}} </i>
+            <i class="lead">{{this.short_description}} </i>
+            </li>
+          {{/if}}
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-10 col-md-offset-1">
+    <p class="lead"> Enter the name of the product you want to borrow & click the submit button. </p>
+
+    {{!-- section to add products --}}
+    <form class="create-update-form" action="products/create" method="POST">
+      <div class="form-group">
+        <label for="product_name" class="cols-sm-2 control-label">product_name</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="product_Name" id="product-input"  placeholder="Enter the name of the product">
+          </div>
+        </div>
+      </div>
+
+       <div class="form-group">
+        <label for="short_description" class="cols-sm-2 control-label">Condition</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="Condition" id="condition-input"  placeholder="Enter the condition of the product">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pricing" class="cols-sm-2 control-label">Lending Price</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-dollar fa-lg" aria-hidden="true"></i></span>
+            <input type="number" class="form-control" name="price" id="pay-input"  placeholder="Enter the Lending Price">
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-default btn-lg" type="submit">Add Product!</button>
+    </form>
+  </div>
+</div>
