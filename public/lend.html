@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sign-in | Neighborhood Rentals</title>
+    <title>Lend | Neighborhood Rentals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/home"><img alt="Brand" id="logo" src="img/NR_logo.png"></a>
+              <a class="navbar-brand nav" href="/home"><img alt="Brand" id="logo" src="img/NR_logo.png"></a>
 
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,7 +46,7 @@
               <ul class="nav navbar-nav">
 
                   <li>
-                      <a href="/borrow">Borrow</a>
+                      <a href="/rent">Borrow</a>
                   </li>
                   <li>
                       <a href="/lend">Lend</a>
@@ -67,46 +67,37 @@
 
   <!-- Page Content -->
   <div class="container">
-  
+
     <div class="row">
       <div class="col-md-6">
-        <p class="lead">Create account</p>
-        <form data-toggle="validator" role="form">
+        <p class="lead">Lend your product</p>
+        <form>
           <div class="form-group">
-            <label for="inputName" class="control-label">Name</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Jane Doe" required>
+            <label for="productInput">Product name</label>
+            <input type="text" class="form-control" id="productName" placeholder="i.e. vaccuum cleaner">
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Daily rate ($) </label>
+            <input type="text" class="form-control" id="productPrice" placeholder="$10">
+          </div>
+          <div class="form-group">
+            <label for="productPhotoURL">Enter your product's photo URL </label>
+             <input type="text" class="form-control" id="productPhotoURL" placeholder="http://photo.jpg">
           </div>
 
           <div class="form-group">
-            <label for="inputEmail" class="control-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
-            <div class="help-block with-errors"></div>
+            <label for="shortDescription">Describe your product</label>
+             <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Electric bagless filtered vacuum cleaner."></textarea>
           </div>
-          <div class="form-group">
-            <label for="inputPassword" class="control-label">Password</label>
-            <div class="form-inline row">
-              <div class="form-group col-sm-6">
-                <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
-                <div class="help-block">Minimum of 6 characters</div>
-              </div>
-              <div class="form-group col-sm-6">
-                <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
-                <div class="help-block with-errors"></div>
-              </div>
-            </div>
-          </div>
+          <label class="custom-file">
+            <input type="file" id="photoUpload" class="custom-file-input">
+            <span class="custom-file-control"></span>
+          </label>
 
+        </form>
+          <br>
           <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="terms" data-error="Before you wreck yourself" required>
-                Check yourself
-              </label>
-              <div class="help-block with-errors"></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Post your product</button>
           </div>
         </form>
         <!-- Reference: https://1000hz.github.io/bootstrap-validator/ -->
