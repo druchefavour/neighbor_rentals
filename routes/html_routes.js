@@ -13,7 +13,7 @@ var db = require('../models');
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/api", function(req, res) {
+  app.get("/home", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
       //res.json(dbProduct);
     var hbsObject = {Product: dbProduct};
@@ -21,6 +21,28 @@ module.exports = function(app) {
     console.log(hbsObject);
 
     res.render('index', hbsObject);
+    });
+  });
+
+  app.get("/rent", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('rent', hbsObject);
+    });
+  });
+
+  app.get("/lend", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('lend', hbsObject);
     });
   });
 
@@ -46,4 +68,3 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/product_test.html"));
   });
 };
-
