@@ -8,17 +8,17 @@ module.exports = function(sequelize, DataTypes) {
     },
     published: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       defaultValue: 0
     },
     rating_cache: {
       type: DataTypes.FLOAT(2, 1),
-      allowNull: false,
+      allowNull: true,
       defaultValue: 3.0
     },
     rating_count: {
       type: DataTypes.INTEGER(11).UNSIGNED,
-      allowNull: false,
+      allowNull: true,
       defaultValue: 0.0
     },
     product_name: {
@@ -66,7 +66,6 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     }
-    )
+  );
   return Product;
   };
-    

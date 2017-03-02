@@ -13,65 +13,60 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the reviews
-  app.get("/api/reviews", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.UserId = req.query.user_id;
-    }
+  app.get("/api/users", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Review.findAll({
-      where: query,
-      include: [db.User]
-    }).then(function(dbReview) {
-      res.json(dbReview);
+    // In this case, just db.User
+    db.User.findAll({
+      include: [db.Review]
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
   // Get rotue for retrieving a single review
-  app.get("/api/reviews/:id", function(req, res) {
+  app.get("/api/users/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
-    db.Review.findOne({
+    db.User.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.User]
-    }).then(function(dbReview) {
-      res.json(dbReview);
+      include: [db.Review]
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
   // POST route for saving a new post
-  app.post("/api/reviews", function(req, res) {
-    db.Review.create(req.body).then(function(dbReview) {
-      res.json(dbReview);
+  app.post("/api/users", function(req, res) {
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
   // DELETE route for deleting posts
-  app.delete("/api/reviews/:id", function(req, res) {
-    db.Review.destroy({
+  app.delete("/api/users/:id", function(req, res) {
+    db.User.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbReview) {
-      res.json(dbReview);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
   // PUT route for updating posts
-  app.put("/api/reviews", function(req, res) {
-    db.Review.update(
+  app.put("/api/users", function(req, res) {
+    db.User.update(
       req.body,
       {
         where: {
           id: req.body.id
         }
-      }).then(function(dbReview) {
-        res.json(dbReview);
+      }).then(function(dbUser) {
+        res.json(dbUser);
       });
   });
 };
