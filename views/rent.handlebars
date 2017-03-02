@@ -1,0 +1,74 @@
+<div class="container">
+<!-- List all available items here -->
+  <div class="row">
+    {{!-- Product list before exchange --}}
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <div class="panel-panel default">
+          <ul class="list-group">
+          {{#each Product}}
+            {{#unless this.exchanged}}
+            <li class="list-group-item">
+              <div class="input-group">
+                <p class="lead"> {{this.product_name}} </p>
+                <i class="lead">{{this.pricing}} </i>
+                <i class="lead">{{this.short_description}} </i>
+                <span class="input-group-btn">
+                  <form action="products/update/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="exchanged" value="true">
+                    <button class="btn btn-default btn-lg" type="submit">Rent the product</button>
+                  </form>
+                </span>
+              </div>
+            </li>
+            {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+
+      {{!-- products list after exchange --}}
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <div class="panel panel-default">
+          <ul class="list-group">
+          {{#each Product}}
+            {{#if this.exchanged}}
+            <li class="list-group-item">
+              <p class="lead">{{this.product_name}} </p>
+              <i class="lead">{{this.pricing}} </i>
+              <i class="lead">{{this.short_description}} </i>
+              </li>
+            {{/if}}
+          {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-4 col-md-offset-2">
+      <div class="panel-panel default">
+        <ul class="list-group">
+        {{#each Product}}
+          {{#unless this.exchanged}}
+          <li class="list-group-item">
+            <div class="input-group">
+              <p class="lead"> {{this.product_name}} </p>
+              <i class="lead">{{this.pricing}} </i>
+              <i class="lead">{{this.short_description}} </i>
+              <span class="input-group-btn">
+                <form action="products/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="exchanged" value="true">
+                  <button class="btn btn-default btn-lg" type="submit">Rent the product</button>
+                </form>
+              </span>
+            </div>
+          </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div> -->
+  </div>
+</div>
