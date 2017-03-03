@@ -34,6 +34,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       //allowNull: false
     },
+    photo: {
+      type: DataTypes.STRING,
+      //allowNull: false
+    },
     long_description: {
       type: DataTypes.TEXT,
       //allowNull: false

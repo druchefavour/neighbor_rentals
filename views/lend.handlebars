@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-10 col-md-offset-1">
+      <p class="lead"> Thank you for lending your item with us! </p>
+
+      {{!-- section to add products --}}
+      <form class="create-update-form" action="products/create" method="POST">
+        <div class="form-group">
+          <label for="product_name" class="cols-sm-2 control-label">Product</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="product_Name" id="product-input"  placeholder="Enter the name of the product">
+            </div>
+          </div>
+        </div>
+
+         <div class="form-group">
+          <label for="short_description" class="cols-sm-2 control-label">Condition</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="Condition" id="condition-input"  placeholder="Enter the condition of the product">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+         <label for="photo" class="cols-sm-2 control-label">Photo</label>
+         <div class="cols-sm-10">
+           <div class="input-group">
+             <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
+             <input type="text" class="form-control" name="Photo" id="productURL"  placeholder="http://photo.jpeg">
+           </div>
+         </div>
+       </div>
+
+        <div class="form-group">
+          <label for="pricing" class="cols-sm-2 control-label">Daily rate ($)</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-dollar fa-lg" aria-hidden="true"></i></span>
+              <input type="number" class="form-control" name="price" id="pay-input"  placeholder="Enter the Lending Price">
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-default btn-lg" type="submit">Post product</button>
+      </form>
+    </div>
+  </div>
+
+</div>
