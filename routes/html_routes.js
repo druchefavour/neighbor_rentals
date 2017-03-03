@@ -48,12 +48,17 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
+  // categories page
+  app.get("/categories", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/in-construction.html"));
+  });
+
   // index route loads view.html
   app.get("/home", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/home.html"));
   });
 
-  // cms route loads cms.html
+  // sign-in route loads cms.html
   app.get("/sign-in", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/sign-in.html"));
   });
