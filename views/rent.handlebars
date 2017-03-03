@@ -1,4 +1,26 @@
 <div class="container">
+  <div class="row">
+    <h4>DELETE this later: This page is currently static, backend needs to be tweaked</h4>
+    <h3>Here are all the item(s) available for rent:</h3>
+
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <button class="alertRent">Rent</button> REI Dome tent</li>
+        <li class="list-group-item"> <button class="alertRent">Rent</button> Roomba iRobot vacuum cleaner</li>
+        <li class="list-group-item"> <button class="alertRent">Rent</button> 3D printer</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- <script>
+    $(".alertRent").click(function() {
+      alert("Thank you for renting this item!" );
+    });
+</script> -->
+
+<div class="container">
 <!-- List all available items here -->
 
 <hr><hr>
@@ -21,7 +43,7 @@
                 <span class="input-group-btn">
                   <form action="products/update/{{this.id}}?_method=PUT" method="POST">
                     <input type="hidden" name="exchanged" value="true">
-                    <button class="btn btn-default btn-lg" type="submit">Rent the product</button>
+                    <button onclick="Thanks for renting this product!" class="btn btn-default" type="submit">Rent the product</button>
                   </form>
                 </span>
               </div>

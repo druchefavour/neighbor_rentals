@@ -37,7 +37,6 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Listen for response and log a message to the user upon success
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({force:true}).then(function() {
 	app.listen(port, function() {

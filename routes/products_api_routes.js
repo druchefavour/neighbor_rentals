@@ -50,7 +50,8 @@ app.post('/products/create', function(req, res){
     short_description:req.body.Condition,
     photo:req.body.photo
   }).then(function(){
-    res.redirect('/lend')
+
+  res.redirect('/lend')
   });
 });
 
