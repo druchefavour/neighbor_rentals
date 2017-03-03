@@ -63,7 +63,7 @@ module.exports = function(app) {
   });
 
   app.get("/sign-in", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/sign-in.html"));
+    res.sendFile(path.join(__dirname + "/../public/sign-in-modal.html"));
   });
 
   // rent route loads rent.html
