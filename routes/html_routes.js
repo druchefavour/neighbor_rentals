@@ -12,8 +12,7 @@ var db = require('../models');
 // Routes
 // =============================================================
 module.exports = function(app) {
-
-  app.get("/home", function(req, res) {
+  /*app.get("/lend", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
       //res.json(dbProduct);
     var hbsObject = {Product: dbProduct};
@@ -21,6 +20,29 @@ module.exports = function(app) {
     console.log(hbsObject);
 
     res.render('index', hbsObject);
+    });
+  });*/
+
+
+  app.get("/rent", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('rent', hbsObject);
+    });
+  });
+
+  app.get("/lend", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('lend', hbsObject);
     });
   });
 
@@ -53,18 +75,28 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/home.html"));
   });
 
-  // cms route loads cms.html
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/borrower.html"));
+  app.get("/home", function(req, res) {
+    res .sendFile(path.join(__dirname + "/../public/home.html"));
   });
 
-  // blog route loads blog.html
-  app.get("/blog", function(req, res) {
+  // cms route loads cms.html
+  app.get("/sign-in", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/sign-in.html"));
+  });
+
+  // rent route loads rent.html
+  app.get("/lend", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/lend.html"));
   });
 
-  // authors route loads product_test.html
-  app.get("/products", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/product_test.html"));
+  // rent route loads rent.html
+  app.get("/rent", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/rent.html"));
+  });
+
+  // rent route loads rent.html
+  app.get("/borrow", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/borrow.html"));
   });
 };
+ 
