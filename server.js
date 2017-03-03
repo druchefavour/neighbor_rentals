@@ -6,6 +6,9 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
+
+
 
 // Sets up the Express App
 // =============================================================
@@ -30,6 +33,11 @@ require("./routes/html_routes.js")(app);
 require("./routes/reviews_api_routes.js")(app);
 require("./routes/products_api_routes.js")(app);
 require("./routes/users_api_routes.js")(app);
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {

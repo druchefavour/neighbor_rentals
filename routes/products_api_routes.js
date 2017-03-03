@@ -48,7 +48,7 @@ app.post('/products/create', function(req, res){
     pricing:req.body.price,
     short_description:req.body.Condition
   }).then(function(){
-    res.redirect('/api')
+    res.redirect('/api');
   });
 });
 
@@ -71,9 +71,6 @@ app.delete("/products/products:id", function(req, res) {
   db.Product.update({'exchanged': req.body.exchanged}, {where: {id: req.params.id}}).then(function(dbProduct){
     res.redirect('/api');
   });
-<<<<<<< HEAD:routes/products_api_routes.js
-};
-=======
+
 });
 };
->>>>>>> master:routes/products_api_routes.js
