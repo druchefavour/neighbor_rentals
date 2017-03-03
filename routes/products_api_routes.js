@@ -51,7 +51,7 @@ app.post('/products/create', function(req, res){
     photo:req.body.photo
   }).then(function(){
 
-  res.redirect('/lend')
+  res.redirect('/rent')
   });
 });
 

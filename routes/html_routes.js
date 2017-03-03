@@ -24,18 +24,6 @@ module.exports = function(app) {
     });
   });*/
 
-
-  app.get("/rent", function(req, res) {
-    db.Product.findAll({}).then(function(dbProduct){
-      //res.json(dbProduct);
-    var hbsObject = {Product: dbProduct};
-
-    console.log(hbsObject);
-
-    res.render('rent', hbsObject);
-    });
-  });
-
   app.get("/lend", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
       //res.json(dbProduct);
@@ -58,18 +46,11 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/lend", function(req, res) {
-    db.Product.findAll({}).then(function(dbProduct){
-      //res.json(dbProduct);
-    var hbsObject = {Product: dbProduct};
-
-    console.log(hbsObject);
-
-    res.render('lend', hbsObject);
-    });
-  });
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/home.html"));
+  });
 
   // categories page
   app.get("/categories", function(req, res) {
@@ -85,15 +66,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/sign-in.html"));
   });
 
-  // rent route loads lend.html
-  app.get("/lend", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/lend.html"));
-  });
-
   // rent route loads rent.html
-  app.get("/rent", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/rent.html"));
-  });
+ // app.get("/rent", function(req, res) {
+ //   res.sendFile(path.join(__dirname + "/../public/rent.html"));
+ // });
 
   // rent route loads rent.html
   app.get("/borrow", function(req, res) {
