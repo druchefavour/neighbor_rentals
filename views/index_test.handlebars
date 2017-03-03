@@ -1,11 +1,5 @@
 <!-- ========================================== --->
-<div class="container"> 
-  <div class="jumbotron"> 
-    <img class="img-rounded" style="width:160px" src="img/lawn-mower.jpg"> 
-    <!-- ===================== -->
-    <h1> Neighbour Rental App!</h1>
-    <p> Manage the rentals here </p>
-  </div>
+<div class="container">
 
   {{!-- Product list before exchange --}}
   <div class="row">
@@ -22,7 +16,7 @@
               <span class="input-group-btn">
                 <form action="products/update/{{this.id}}?_method=PUT" method="POST">
                   <input type="hidden" name="exchanged" value="true">
-                  <button class="btn btn-default btn-lg" type="submit"> Borrow! </button>
+                  <button class="btn btn-default btn-lg" type="submit">Rent the product</button>
                 </form>
               </span>
             </div>
@@ -53,20 +47,7 @@
     </div>
   </div>
 
-  <div class="col-md-10 col-md-offset-1">
-    <p class="lead"> Enter the name of the product you want to borrow & click the submit button. </p>
 
-    {{!-- section to add products --}}
-    <form class="create-update-form" action="products/create" method="POST">
-      <div class="form-group">
-        <label for="product_name" class="cols-sm-2 control-label">product_name</label>
-        <div class="cols-sm-10">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-star fa-lg" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="product_Name" id="product-input"  placeholder="Enter the name of the product">
-          </div>
-        </div>
-      </div>
 
        <div class="form-group">
         <label for="short_description" class="cols-sm-2 control-label">Condition</label>

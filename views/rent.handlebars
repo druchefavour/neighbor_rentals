@@ -1,6 +1,8 @@
 <div class="container">
 <!-- List all available items here -->
+
 <hr><hr>
+
   <div class="row">
     {{!-- Product list before exchange --}}
     <div class="row">
@@ -14,7 +16,9 @@
                 <p class="lead"> {{this.product_name}} </p>
                 <i class="lead">{{this.pricing}} </i>
                 <i class="lead">{{this.short_description}} </i>
+
                 <i class="lead">{{this.photo}} </i>
+
                 <span class="input-group-btn">
                   <form action="products/update/{{this.id}}?_method=PUT" method="POST">
                     <input type="hidden" name="exchanged" value="true">
@@ -41,7 +45,9 @@
               <p class="lead">{{this.product_name}} </p>
               <i class="lead">{{this.pricing}} </i>
               <i class="lead">{{this.short_description}} </i>
+
               <i class="lead">{{this.photo}} </i>
+
               </li>
             {{/if}}
           {{/each}}
@@ -59,8 +65,9 @@
             <div class="input-group">
               <p class="lead"> {{this.product_name}} </p>
               <i class="lead">{{this.pricing}} </i>
-              <i class="lead">{{this.short_description}} </i>
+              <i class="lead">{{this.short_description </i>
               <i class="lead">{{this.photo}} </i>
+
               <span class="input-group-btn">
                 <form action="products/update/{{this.id}}?_method=PUT" method="POST">
                   <input type="hidden" name="exchanged" value="true">

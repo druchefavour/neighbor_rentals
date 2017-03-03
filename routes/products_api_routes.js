@@ -73,5 +73,9 @@ app.delete("/products/products:id", function(req, res) {
   db.Product.update({'exchanged': req.body.exchanged}, {where: {id: req.params.id}}).then(function(dbProduct){
     res.redirect('/rent');
   });
+<<<<<<< HEAD:routes/products_api_routes.js
+};
+=======
 });
 };
+>>>>>>> master:routes/products_api_routes.js

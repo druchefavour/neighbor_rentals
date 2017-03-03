@@ -12,7 +12,6 @@ var db = require('../models');
 // Routes
 // =============================================================
 module.exports = function(app) {
-
   /*app.get("/lend", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
       //res.json(dbProduct);
@@ -24,6 +23,28 @@ module.exports = function(app) {
     });
   });*/
 
+
+  app.get("/rent", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('rent', hbsObject);
+    });
+  });
+
+  app.get("/lend", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('lend', hbsObject);
+    });
+  });
 
   app.get("/rent", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
