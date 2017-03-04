@@ -49,7 +49,8 @@ module.exports = function(app) {
     email:req.body.Email,
     password:req.body.password,
   }).then(function(dbUser){
-  res.json(dbUser)
+  //res.json(dbUser)
+  res.redirect('/home');
   });
 });
 
