@@ -18,14 +18,14 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
     db.User.findAll({
-      include: [db.Product]
+      include: [db.Review]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
-  // Get rotue for retrieving a single review
-  app.get("/api/users/:id", function(req, res) {
+  // Get rouTe for retrieving a single review
+  app.get("/users/sign-in/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
@@ -33,9 +33,11 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Product]
+      //include: [db.Review]
     }).then(function(dbUser) {
-      res.json(dbUser);
+      //res.json(dbUser);
+      res.redirect('/home');
+
     });
   });
 
@@ -47,6 +49,19 @@ module.exports = function(app) {
   db.User.create({
     username:req.body.userid,
     email:req.body.Email,
+    password:req.body.password,
+  }).then(function(dbUser){
+  //res.json(dbUser)
+  res.redirect('/home');
+  });
+});
+
+// POST route for saving a new username
+ app.post("/users/sign-in", function(req, res) {
+  console.log(req.body.userid);
+  console.log(req.body.password);
+  db.User.create({
+    username:req.body.userid,
     password:req.body.password,
   }).then(function(dbUser){
   //res.json(dbUser)
