@@ -43,12 +43,15 @@ app.post('/products/create', function(req, res){
   console.log(req.body.product_Name);
   console.log(req.body.price);
   console.log(req.body.Condition);
+  console.log(req.body.photo);
   db.Product.create({
     product_name:req.body.product_Name,
     pricing:req.body.price,
-    short_description:req.body.Condition
+    short_description:req.body.Condition,
+    photo:req.body.photo
   }).then(function(){
-    res.redirect('/api');
+
+  res.redirect('/rent')
   });
 });
 
@@ -69,8 +72,7 @@ app.delete("/products/products:id", function(req, res) {
   console.log('condition ', condition);
 
   db.Product.update({'exchanged': req.body.exchanged}, {where: {id: req.params.id}}).then(function(dbProduct){
-    res.redirect('/api');
+    res.redirect('/rent');
   });
-
 });
 };

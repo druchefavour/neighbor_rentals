@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- Button trigger modal -->
+<style>
+.prettyline {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+
+.login-signup {
+  padding: 25 0 25px;
+  margin-top:25px;
+
+}
+
+.login-signup {
+  padding: 0 0 25px;
+}
+
+
+.btn-success {
+  background: #23bab5;
+  border-radius:0;
+  border: 2px solid #23bab5;
+  webkit-transition: all 400ms cubic-bezier(.4,0,.2,1);
+  transition: all 400ms cubic-bezier(.4,0,.2,1);
+}
+
+a {
+  color: #23bab5;
+}
+
+ul {
+  list-style-type: none;
+}
+
+article[role="login"] {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+  webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 30px 50px;
+  margin-bottom: 20px;
+}
+
+article[role="login"] input[type="submit"] {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+article[role="login"]:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 1px 15px rgba(0, 0, 0, 0.23);
+  webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+article[role="login"] h3 {
+  font-size: 26px;
+  font-weight: 300;
+  color: #23bab5;
+  margin-bottom: 20px;
+}
+
+article[role="login"] p {
+  font-size: 16px;
+  padding: 5px 15px;
+}
+
+.nav-tab-holder {
+  padding: 0 0 0 30px;
+  float: right;
+}
+  .nav-tab-holder {
+    float: none;
+    overflow: hidden;
+  }
+
+  .nav-tabs > li > a {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-tabs > li {
+    width: 50%;
+  }
+
+.nav-tab-holder .nav-tabs {
+  border: 0;
+  float: none;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  
+}
+
+
+.nav-tab-holder 
+.nav-tabs > li > a {
+  background: #d9d9d9;
+  color: #6c6c6c;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.nav-tab-holder .nav-tabs > li {
+  margin-bottom: -3px;
+  text-align: center;
+  padding: 0;
+  display: table-cell;
+  float: none;
+  padding: 0;
+}
+
+.nav-tab-holder .nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+  color: #FFF;
+  background-color: #23bab5;
+  border: 0;
+  border-radius: 0;
+}
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #f7faff;
+    background-image: url("../img/for-rent.png");
+    background-repeat: no-repeat;
+    background-position: : center;
+}
+
+.navbar-inverse {
+  background-color: #dff0d8;
+  border-color: #dff0d8;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: green;
+}
+
+#logo{
+  width: 35px;
+  length: 35px;
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    width: 100%;
+    /*position: fixed;*/
+    bottom: 0px;
+    text-align: center;
+
+}
+
+*/ Color line credit to ninjamonk: [[http://bootsnipp.com/snippets/featured/mix-amp-match-login]]
+
+</style>
+
+<!-- Navigation -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/home"><img alt="Brand" id="logo" src="img/NR_logo.png"></a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="/rent">Rent</a>
+                    </li>
+                    <li>
+                        <a href="/lend">Lend</a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/sign-in">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<!-- Modal -->
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <br>
+        <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+              <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+              <li class=""><a href="#why" data-toggle="tab">Why?</a></li>
+            </ul>
+        </div>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in" id="why">
+        <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
+        <p></p><br> Please contact <a mailto:href="neighboRental@Neighbor.com"></a>neighboRental@Neighbor.com</a> for any other inquiries.</p>
+        </div>
+        <div class="tab-pane fade active in" id="signin">
+            <form class="form-horizontal">
+            <fieldset>
+            <!-- Sign In Form -->
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="userid">Username:</label>
+              <div class="controls">
+                <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="neighborR" class="input-medium" required="">
+              </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="control-group">
+              <label class="control-label" for="passwordinput">Password:</label>
+              <div class="controls">
+                <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
+              </div>
+            </div>
+
+            <!-- Multiple Checkboxes (inline) -->
+            <div class="control-group">
+              <label class="control-label" for="rememberme"></label>
+              <div class="controls">
+                <label class="checkbox inline" for="rememberme-0">
+                  <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
+                  Remember me
+                </label>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="control-group">
+              <label class="control-label" for="signin"></label>
+              <div class="controls">
+                <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+         </div>
+
+        <div class="tab-pane fade" id="signup">
+         <form class="form-horizontal" role="form" action="users/create" method="post" name="signupform">>
+          <fieldset>
+            <!-- Sign Up Form -->
+            <!-- Text input-->
+           <div class="control-group">
+             <label class="control-label" for="Email">Email:</label>
+              <div class="controls">
+                <input id="Email" name="Email" class="form-control" type="text" placeholder="neighboRental@Neighbor.com" class="input-large" required="">
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="userid">Username:</label>
+              <div class="controls">
+                <input id="userid" name="userid" class="form-control" type="text" placeholder="NeighboR" class="input-large" required="">
+              </div>
+            </div>
+            
+            <!-- Password input-->
+            <div class="control-group">
+              <label class="control-label" for="password">Password:</label>
+              <div class="controls">
+                <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                <em>1-8 Characters</em>
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
+              <div class="controls">
+                <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+              </div>
+            </div>
+            
+            <!-- Multiple Radios (inline) -->
+            <br>
+            <div class="control-group">
+              <label class="control-label" for="humancheck">Humanity Check:</label>
+              <div class="controls">
+                <label class="radio inline" for="humancheck-0">
+                  <input type="radio" name="humancheck" id="humancheck-0" value="robot" checked="checked">I'm a Robot</label>
+                <label class="radio inline" for="humancheck-1">
+                  <input type="radio" name="humancheck" id="humancheck-1" value="human">I'm Human</label>
+              </div>
+            </div>
+            
+            <!-- Button -->
+            <div class="control-group">
+              <label class="control-label" for="confirmsignup"></label>
+              <div class="controls">
+                <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+              </div>
+            </div>
+            </fieldset>
+            </form>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+      <center>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12 col-lg-offset-2">
+    <div class="login-signup">
+      <div class="row">
+        <div class="col-md-8 nav-tab-holder">
+     
+      </div>
+
+      </div>
+  
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div class="row">
+
+            <div class="col-md-8 mobile-pull">
+              <article role="login">
+                <h3 class="text-center"><i class="fa fa-lock"></i>USER LOGIN</h3>
+        
+                <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="loginform">
+                <fieldset>
+                  <legend>Login</legend>
+                  <!-- Deleted form -->
+                  <button type="button" class="btn btn-primary btn-lg" id="myBtn">login here</button>
+                </fieldset>
+                <br><br><br><br><br>
+                <hr>
+      
+              <!-- Footer -->
+              <footer>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <p>Copyright &copy; NeighboRentals 2017</p>
+                  </div>
+                </div>
+              </footer>
+            </article>
+          </div> 
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of home -->
+      <!-- Trigger the modal with a button -->
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content col-md-12">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+          <div class="modal-body">
+            <div class="row">      
+              <article role="login">
+                <h3 class="text-center"><i class="fa fa-lock"></i> Create User Account</h3>
+                <form role="form" action="" method="post" name="signupform">
+                <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-5 control-label">Company Name</label>
+                  <div class="col-md-7">
+                    <input type="text" name="name" placeholder="Enter Full Name" value="" class="form-control" />
+                    <span class="text-danger"></span>
+                  </div>            
+              </div>
+              <br>
+              <br>
+              <br>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-5 control-label">Company Logo <small>(optional)</small></label>
+                  <div class="col-md-7">
+                    <input type="file"  name="inputFile" id="inputFile" class="form-control" placeholder="" >
+                  </div>
+              </div>
+              <br>
+              <br>
+
+                <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-5 control-label">Company Email</label>
+                  <div class="col-md-7">
+                    <input type="email" name="email" placeholder="Email"  value=" " class="form-control" />
+                    <span class="text-danger"></span>        
+                  </div>              
+              </div>
+              <br>
+              <br>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-5 control-label">Password <small>(optional)</small></label>
+                  <div class="col-md-7">
+                    <input type="password" name="password" placeholder="Password"  class="form-control" />
+                    <span class="text-danger"></span> 
+                  </div>
+              </div>         
+
+              <br><br>    <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-5 control-label">Confirm Password <small>(optional)</small></label>
+                  <div class="col-md-7">
+                    <input type="password" name="cpassword" placeholder="Confirm Password"  class="form-control" />
+                    <span class="text-danger"></span>
+                  </div>
+              </div>         
+
+              <br><br>      
+              <div class="form-group">
+                <label class="col-md-5 control-label">Company Telephone</label>
+                  <div class="col-md-7">
+                    <input type="text" class="form-control" id="telephone"  name ="telephone"placeholder=""  />
+                  </div>
+              </div>      
+              <br> <br>                  
+              <div class="form-group">
+                <label class="col-md-5 control-label">Company Address</label>
+                  <div class="col-md-7">
+                    <input type="text" class="form-control" id="com_add"  name ="com_add"placeholder=""  />
+                  </div>
+              </div> 
+              <br>                       
+              <br>
+              <div class="form-group">
+                <label class="col-md-5 control-label">Country</label>
+                 <div class="col-md-7">
+                    <input type="text" class="form-control" id="contry"  name ="country"placeholder=""  />
+                  </div>
+              </div> 
+              <br> <br>                     
+                <div class="form-group">
+                 <label class="col-md-5 control-label">Website <small>(optional)</small></label>
+                  <div class="col-md-7">
+                    <input type="url" class="form-control" id="inputwebsite"  name ="web"placeholder="">
+                  </div>
+                </div> 
+                <br>
+                <br>                      
+                <div class="form-group">
+                  <label class="col-md-5 control-label">Website <small>(optional)</small></label>
+                    <div class="col-md-7">
+                      <input type="url" class="form-control" id="inputwebsite"  name ="web"placeholder="">
+                    </div>
+                </div>
+                <br><br>
+                 
+                <div class="form-group">
+                  <label class="col-md-5 control-label">Video <small>(optional)</small></label>
+                    <div class="col-md-7">
+                      <input type="url" class="form-control" id="inputvideo" name="video" placeholder="A link to a video about your company" />
+                    </div>
+                </div> 
+                <br><br>
+
+                <div class="form-group">
+                 <label class="col-md-5 control-label">Facebook Username <small>(optional)</small></label>
+                  <div class="col-md-7">
+                    <input type="url" class="form-control" id="inputfbUser" name="fbuser" placeholder="web.facebook.com/?"   />
+                  </div>
+                </div>
+              <!--
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-block"  value="SUBMIT">
+                </div> -->
+
+                <div class="form-group">
+                  <input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
+                </div>      
+                </form>
+            </article>  
+               </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>             
+            </div>
+          </div>
+      <script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+</body>
+</html>
+
+
+

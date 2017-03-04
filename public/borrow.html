@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rent | Neighborhood Rentals</title>
+    <title>Lend | Neighborhood Rentals</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/home"><img alt="Brand" id="logo" src="img/NR_logo.png"></a>
+              <a class="navbar-brand nav" href="/home"><img alt="Brand" id="logo" src="img/NR_logo.png"></a>
 
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,7 +46,7 @@
               <ul class="nav navbar-nav">
 
                   <li>
-                      <a href="/rent">Rent</a>
+                      <a href="/rent">Borrow</a>
                   </li>
                   <li>
                       <a href="/lend">Lend</a>
@@ -69,14 +69,35 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
-        <p class="lead">Products for rent</p>
-
-
-        <hr>
+      <div class="col-md-6">
+        <p class="lead">Assign your product for lending</p>
         <form>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Rent</button>
+            <label for="productInput">Product name</label>
+            <input type="text" class="form-control" id="productName" placeholder="i.e. vaccuum cleaner">
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Daily rate ($) </label>
+            <input type="text" class="form-control" id="productPrice" placeholder="$10">
+          </div>
+          <div class="form-group">
+            <label for="productPhotoURL">Enter your product's photo URL </label>
+             <input type="text" class="form-control" id="productPhotoURL" placeholder="http://photo.jpg">
+          </div>
+
+          <div class="form-group">
+            <label for="shortDescription">Describe your product</label>
+             <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Electric bagless filtered vacuum cleaner."></textarea>
+          </div>
+          <label class="custom-file">
+            <input type="file" id="photoUpload" class="custom-file-input">
+            <span class="custom-file-control"></span>
+          </label>
+
+        </form>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Post your product</button>
           </div>
         </form>
         <!-- Reference: https://1000hz.github.io/bootstrap-validator/ -->
@@ -109,4 +130,4 @@
 
 </body>
 
-</html
+</html>

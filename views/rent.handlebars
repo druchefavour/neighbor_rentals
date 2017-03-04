@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h4>DELETE this later: This page is currently static, backend needs to be tweaked</h4>
+    <!--h4>DELETE this later: This page is currently static, backend needs to be tweaked</h4-->
     <h3>Here are all the item(s) available for rent:</h3>
 
     <div class="card">
@@ -22,6 +22,9 @@
 
 <div class="container">
 <!-- List all available items here -->
+
+<hr><hr>
+
   <div class="row">
     {{!-- Product list before exchange --}}
     <div class="row">
@@ -35,6 +38,8 @@
                 <p class="lead"> {{this.product_name}} </p>
                 <i class="lead">{{this.pricing}} </i>
                 <i class="lead">{{this.short_description}} </i>
+                <i class="lead">{{this.photo}} </i>
+
                 <span class="input-group-btn">
                   <form action="products/update/{{this.id}}?_method=PUT" method="POST">
                     <input type="hidden" name="exchanged" value="true">
@@ -61,6 +66,8 @@
               <p class="lead">{{this.product_name}} </p>
               <i class="lead">{{this.pricing}} </i>
               <i class="lead">{{this.short_description}} </i>
+              <i class="lead">{{this.photo}} </i>
+
               </li>
             {{/if}}
           {{/each}}
@@ -79,6 +86,8 @@
               <p class="lead"> {{this.product_name}} </p>
               <i class="lead">{{this.pricing}} </i>
               <i class="lead">{{this.short_description}} </i>
+              <i class="lead">{{this.photo}} </i>
+
               <span class="input-group-btn">
                 <form action="products/update/{{this.id}}?_method=PUT" method="POST">
                   <input type="hidden" name="exchanged" value="true">

@@ -13,27 +13,16 @@ var db = require('../models');
 // =============================================================
 module.exports = function(app) {
 
-  // app.get("/home", function(req, res) {
-  //   db.Product.findAll({}).then(function(dbProduct){
-  //     //res.json(dbProduct);
-  //   var hbsObject = {Product: dbProduct};
-  //
-  //   console.log(hbsObject);
-  //
-  //   res.render('index', hbsObject);
-  //   });
-  // });
-
-  app.get("/rent", function(req, res) {
+  /*app.get("/lend", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
       //res.json(dbProduct);
     var hbsObject = {Product: dbProduct};
 
     console.log(hbsObject);
 
-    res.render('rent', hbsObject);
+    res.render('index', hbsObject);
     });
-  });
+  });*/
 
   app.get("/lend", function(req, res) {
     db.Product.findAll({}).then(function(dbProduct){
@@ -46,7 +35,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/rent", function(req, res) {
+    db.Product.findAll({}).then(function(dbProduct){
+      //res.json(dbProduct);
+    var hbsObject = {Product: dbProduct};
+
+    console.log(hbsObject);
+
+    res.render('rent', hbsObject);
+    });
+  });
+
+
   // Each of the below routes just handles the HTML page that the user gets sent to.
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/home.html"));
+  });
 
   // categories page
   app.get("/categories", function(req, res) {
@@ -58,14 +62,18 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/home.html"));
   });
 
-  // sign-in route loads cms.html
   app.get("/sign-in", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/sign-in.html"));
+    res.sendFile(path.join(__dirname + "/../public/sign-in-modal.html"));
   });
 
+  // rent route loads rent.html
+ // app.get("/rent", function(req, res) {
+ //   res.sendFile(path.join(__dirname + "/../public/rent.html"));
+ // });
 
-  // authors route loads product_test.html
-  app.get("/products", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/product_test.html"));
+  // rent route loads rent.html
+  app.get("/borrow", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/borrow.html"));
   });
 };
+ 
