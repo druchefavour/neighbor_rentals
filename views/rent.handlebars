@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <!--h4>DELETE this later: This page is currently static, backend needs to be tweaked</h4-->
-    <h3>Here are all the item(s) available for rent:</h3>
+    <h4>NEED to omit these links</h4>
 
     <div class="card">
       <ul class="list-group list-group-flush">
@@ -23,12 +23,10 @@
 <div class="container">
 <!-- List all available items here -->
 
-<hr><hr>
-
   <div class="row">
     {{!-- Product list before exchange --}}
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
+      <div class="col-md-6">
+        <h5>Item(s) available:</h5>
         <div class="panel-panel default">
           <ul class="list-group">
           {{#each Product}}
@@ -54,10 +52,11 @@
       </div>
     </div>
 
-
       {{!-- products list after exchange --}}
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
+
+
+      <div class="col-md-6">
+        <h5>Cart:</h5>
         <div class="panel panel-default">
           <ul class="list-group">
           {{#each Product}}
@@ -67,39 +66,12 @@
               <i class="lead">{{this.pricing}} </i>
               <i class="lead">{{this.short_description}} </i>
               <i class="lead">{{this.photo}} </i>
-
               </li>
             {{/if}}
           {{/each}}
           </ul>
         </div>
       </div>
-    </div>
 
-    <!-- <div class="col-md-4 col-md-offset-2">
-      <div class="panel-panel default">
-        <ul class="list-group">
-        {{#each Product}}
-          {{#unless this.exchanged}}
-          <li class="list-group-item">
-            <div class="input-group">
-              <p class="lead"> {{this.product_name}} </p>
-              <i class="lead">{{this.pricing}} </i>
-              <i class="lead">{{this.short_description}} </i>
-              <i class="lead">{{this.photo}} </i>
-
-              <span class="input-group-btn">
-                <form action="products/update/{{this.id}}?_method=PUT" method="POST">
-                  <input type="hidden" name="exchanged" value="true">
-                  <button class="btn btn-default btn-lg" type="submit">Rent the product</button>
-                </form>
-              </span>
-            </div>
-          </li>
-          {{/unless}}
-        {{/each}}
-      </ul>
-    </div>
-  </div> -->
   </div>
 </div>
