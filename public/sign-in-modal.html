@@ -225,7 +225,6 @@ footer {
 
 }
 
-
 */ Color line credit to ninjamonk: [[http://bootsnipp.com/snippets/featured/mix-amp-match-login]]
 
 </style>
@@ -233,7 +232,7 @@ footer {
 <!-- Navigation -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+    <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -285,7 +284,7 @@ footer {
         <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in" id="why">
         <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
-        <p></p><br> Please contact <a mailto:href="JoeSixPack@Sixpacksrus.com"></a>JoeSixPack@Sixpacksrus.com</a> for any other inquiries.</p>
+        <p></p><br> Please contact <a mailto:href="neighboRental@Neighbor.com"></a>neighboRental@Neighbor.com</a> for any other inquiries.</p>
         </div>
         <div class="tab-pane fade active in" id="signin">
             <form class="form-horizontal">
@@ -293,9 +292,9 @@ footer {
             <!-- Sign In Form -->
             <!-- Text input-->
             <div class="control-group">
-              <label class="control-label" for="userid">Alias:</label>
+              <label class="control-label" for="userid">Username:</label>
               <div class="controls">
-                <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
+                <input required="" id="userid" name="userid" type="text" class="form-control" placeholder="neighborR" class="input-medium" required="">
               </div>
             </div>
 
@@ -325,26 +324,27 @@ footer {
                 <button id="signin" name="signin" class="btn btn-success">Sign In</button>
               </div>
             </div>
-            </fieldset>
-            </form>
-        </div>
+          </fieldset>
+          </form>
+         </div>
+
         <div class="tab-pane fade" id="signup">
-            <form class="form-horizontal">
-            <fieldset>
+         <form class="form-horizontal" role="form" action="users/create" method="post" name="signupform">>
+          <fieldset>
             <!-- Sign Up Form -->
             <!-- Text input-->
-            <div class="control-group">
-              <label class="control-label" for="Email">Email:</label>
+           <div class="control-group">
+             <label class="control-label" for="Email">Email:</label>
               <div class="controls">
-                <input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                <input id="Email" name="Email" class="form-control" type="text" placeholder="neighboRental@Neighbor.com" class="input-large" required="">
               </div>
             </div>
             
             <!-- Text input-->
             <div class="control-group">
-              <label class="control-label" for="userid">Alias:</label>
+              <label class="control-label" for="userid">Username:</label>
               <div class="controls">
-                <input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                <input id="userid" name="userid" class="form-control" type="text" placeholder="NeighboR" class="input-large" required="">
               </div>
             </div>
             
@@ -398,26 +398,6 @@ footer {
   </div>
 </div>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-
-<div class="container">
-
-<div class="container">
-
 <div class="col-md-12 col-lg-offset-2">
     <div class="login-signup">
       <div class="row">
@@ -440,8 +420,6 @@ footer {
                   <legend>Login</legend>
                   <!-- Deleted form -->
                   <button type="button" class="btn btn-primary btn-lg" id="myBtn">login here</button>
-
-                  <button type="button" class="btn btn-info btn-lg" id="myBtn">signup here</button>
                 </fieldset>
                 <br><br><br><br><br>
                 <hr>
@@ -474,13 +452,13 @@ footer {
             <div class="row">      
               <article role="login">
                 <h3 class="text-center"><i class="fa fa-lock"></i> Create User Account</h3>
-                <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
+                <form role="form" action="" method="post" name="signupform">
                 <!-- Text input-->
               <div class="form-group">
                 <label class="col-md-5 control-label">Company Name</label>
                   <div class="col-md-7">
-                    <input type="text" name="name" placeholder="Enter Full Name" value="<?php if($error) echo $name; ?>" class="form-control" />
-                    <span class="text-danger"><?php if (isset($name_error)) echo $name_error; ?></span>
+                    <input type="text" name="name" placeholder="Enter Full Name" value="" class="form-control" />
+                    <span class="text-danger"></span>
                   </div>            
               </div>
               <br>
@@ -500,8 +478,8 @@ footer {
               <div class="form-group">
                 <label class="col-md-5 control-label">Company Email</label>
                   <div class="col-md-7">
-                    <input type="email" name="email" placeholder="Email"  value="<?php if($error) echo $email; ?>" class="form-control" />
-                    <span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>        
+                    <input type="email" name="email" placeholder="Email"  value=" " class="form-control" />
+                    <span class="text-danger"></span>        
                   </div>              
               </div>
               <br>
@@ -511,7 +489,7 @@ footer {
                 <label class="col-md-5 control-label">Password <small>(optional)</small></label>
                   <div class="col-md-7">
                     <input type="password" name="password" placeholder="Password"  class="form-control" />
-                    <span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span> 
+                    <span class="text-danger"></span> 
                   </div>
               </div>         
 
@@ -520,7 +498,7 @@ footer {
                 <label class="col-md-5 control-label">Confirm Password <small>(optional)</small></label>
                   <div class="col-md-7">
                     <input type="password" name="cpassword" placeholder="Confirm Password"  class="form-control" />
-                    <span class="text-danger"><?php if (isset($cpassword_error)) echo $cpassword_error; ?></span>
+                    <span class="text-danger"></span>
                   </div>
               </div>         
 
@@ -586,22 +564,15 @@ footer {
                   <input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
                 </div>      
                 </form>
-            </article>
-        
-
- 
-                </div>
+            </article>  
+               </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-              </div>
-              
+              </div>             
             </div>
           </div>
-          
-        </div>
-
       <script>
 $(document).ready(function(){
     $("#myBtn").click(function(){
