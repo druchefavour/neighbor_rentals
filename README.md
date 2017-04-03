@@ -50,11 +50,11 @@ We will use:
 
 ## User Flow
 Tabs in the web page: 
-# Share - where user posts their things to share / lend
-# Availability of item
-# Rent duration
-# Cost (flat fee + $x / day)
-# Borrow - where user searches for items that they need
-# Add a search bar
-# Search by category
-# Search by location (zip) - incorporate searched_item closest to you (Google API)
+* Share - where user posts their things to share / lend
+* Availability of item
+* Rent duration
+* Cost (flat fee + $x / day)
+* Borrow - where user searches for items that they need
+* Add a search bar
+* Search by category
+* Search by location (zip) - incorporate searched_item closest to you (Google API)
